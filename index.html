@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galvor × AngelOne — Creator Performance Pitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Merriweather Sans',-apple-system,sans-serif;color:#0F172A;background:#fff;line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --navy:#060D1F;
+  --navy2:#0D1630;
+  --blue:#2B4EFF;
+  --blue-dim:rgba(43,78,255,0.1);
+  --orange:#E84D19;
+  --orange-dim:rgba(232,77,25,0.12);
+  --groww:#2BB673;
+  --groww-dim:rgba(43,182,115,0.12);
+  --border:rgba(255,255,255,0.07);
+  --radius:14px;
+}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,13,31,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 56px;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:14px;font-weight:700;color:#fff;letter-spacing:.03em}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;color:rgba(255,255,255,0.5);transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-size:13px;font-weight:600;background:var(--orange);color:#fff;padding:8px 20px;border-radius:99px;transition:opacity .15s}
+.nav-cta:hover{opacity:.88}
+
+/* ── SECTIONS ── */
+.sec{padding:100px 56px;max-width:1100px;margin:0 auto}
+.sec.dark{background:none}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px}
+.sec-label.light{color:rgba(15,23,42,0.4)}
+.sec-label.orange{color:var(--orange)}
+h2{font-size:clamp(32px,4vw,52px);font-weight:800;line-height:1.1;color:#fff;margin-bottom:18px}
+h2.dark-text{color:#0F172A}
+.sec-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.55);max-width:620px;line-height:1.85;margin-bottom:56px}
+.sec-sub.dark-text{color:rgba(15,23,42,0.6)}
+
+/* dark bg sections */
+.bg-dark{background:var(--navy)}
+.bg-dark2{background:var(--navy2)}
+.bg-light{background:#F8F9FC}
+
+/* ── HERO ── */
+#hero{background:var(--navy);padding-top:0;min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,77,25,0.15) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none}
+.hero-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(43,78,255,0.12) 0%,transparent 70%);bottom:-50px;left:100px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;padding:140px 56px 100px;max-width:1100px;margin:0 auto;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,77,25,0.1);border:1px solid rgba(232,77,25,0.25);border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--orange);letter-spacing:.04em;text-transform:uppercase;margin-bottom:36px}
+.hero-h1{font-size:clamp(48px,6vw,80px);font-weight:800;line-height:1.05;color:#fff;margin-bottom:28px;max-width:780px}
+.hero-h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{font-size:19px;font-weight:300;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.9;margin-bottom:52px}
+.hero-stats{display:flex;gap:48px;margin-bottom:52px}
+.hero-stat-num{font-size:32px;font-weight:800;color:#fff}
+.hero-stat-lbl{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+.hero-divider{width:1px;background:rgba(255,255,255,0.08)}
+.hero-cta-row{display:flex;gap:14px;align-items:center}
+.btn-primary{font-size:15px;font-weight:600;background:var(--orange);color:#fff;padding:14px 32px;border-radius:99px;display:inline-block;transition:opacity .15s}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{font-size:15px;font-weight:500;color:rgba(255,255,255,0.6);padding:14px 24px;border-radius:99px;border:1px solid rgba(255,255,255,0.12);display:inline-block;transition:all .15s}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,0.3)}
+
+/* ── PROBLEM ── */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+.prob-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden}
+.prob-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.prob-card.c1::before{background:linear-gradient(90deg,var(--orange),transparent)}
+.prob-card.c2::before{background:linear-gradient(90deg,#7B9FFF,transparent)}
+.prob-card.c3::before{background:linear-gradient(90deg,#F59E0B,transparent)}
+.prob-card.c4::before{background:linear-gradient(90deg,#10B981,transparent)}
+.prob-num{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.c1 .prob-num{color:var(--orange)}
+.c2 .prob-num{color:#7B9FFF}
+.c3 .prob-num{color:#F59E0B}
+.c4 .prob-num{color:#10B981}
+.prob-title{font-size:20px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:12px}
+.prob-body{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75}
+
+/* ── COMPETITIVE ── */
+.comp-table{width:100%;border-collapse:collapse;margin-top:8px}
+.comp-table th{padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.08)}
+.comp-table th.col-attr{text-align:left;color:rgba(255,255,255,0.4);width:220px}
+.comp-table th.col-ao{color:var(--orange);text-align:center}
+.comp-table th.col-gr{color:var(--groww);text-align:center}
+.comp-table td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;vertical-align:top}
+.comp-table td.attr{color:rgba(255,255,255,0.6);font-weight:500}
+.comp-table td.ao-cell{text-align:center;color:rgba(255,255,255,0.8)}
+.comp-table td.gr-cell{text-align:center;color:rgba(255,255,255,0.8)}
+.comp-table tr:hover td{background:rgba(255,255,255,0.02)}
+.badge-win{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(43,182,115,0.15);color:var(--groww);border:1px solid rgba(43,182,115,0.25)}
+.badge-lag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(232,77,25,0.12);color:var(--orange);border:1px solid rgba(232,77,25,0.2)}
+.badge-ok{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1)}
+
+/* ── SELF-ANALYSIS ── */
+.dna-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.dna-card{display:flex;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:28px}
+.dna-card-num{font-size:13px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:1px;min-width:24px;padding-top:2px}
+.dna-card-inner{display:flex;flex-direction:column;gap:12px}
+.dna-card-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--orange)}
+.dna-card-title{font-size:17px;font-weight:700;color:#fff;line-height:1.4;margin:0}
+.dna-card-body{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin:0}
+.dna-sources{display:flex;flex-wrap:wrap;gap:8px}
+.dna-source{font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.55)}
+.dna-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--orange);text-decoration:none;margin-top:4px}
+.dna-link:hover{opacity:0.8}
+
+/* ── WHAT GALVOR DOES ── */
+.os-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.os-layers{display:flex;flex-direction:column;gap:12px}
+.os-layer{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.os-layer-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.os-layer-title{font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:4px}
+.os-layer-body{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65}
+.funnel-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:28px}
+.funnel-title{font-size:14px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:20px}
+.funnel-steps{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.funnel-step{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.funnel-step:last-child{border-bottom:none}
+.fs-num{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px}
+.fs-label{font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:2px}
+.fs-body{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.55}
+.fs-metric{font-size:11px;font-weight:700;margin-top:4px;padding:2px 8px;border-radius:99px;display:inline-block}
+
+/* ── PLATFORM ── */
+.platform-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;margin-top:48px}
+.platform-features{display:flex;flex-direction:column;gap:4px}
+.pf-item{display:flex;gap:14px;padding:16px 14px;border-radius:10px;transition:background .15s;cursor:pointer;border-left:3px solid transparent}
+.pf-item:hover{background:rgba(255,255,255,0.04)}
+.pf-item.sel{background:rgba(232,77,25,0.08);border-left-color:var(--orange)}
+.pf-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.pf-title{font-size:14px;font-weight:600;color:rgba(255,255,255,0.88);margin-bottom:3px}
+.pf-body{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6}
+.pf-screens{position:relative}
+.pf-screen-wrap{display:none}
+.pf-screen-wrap.pf-visible{display:block}
+.screen{background:#0a1020;border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);overflow:hidden}
+.screen-bar{background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;gap:7px}
+.sd{width:8px;height:8px;border-radius:50%}
+.screen-title{color:rgba(255,255,255,0.85);font-size:11px;margin-left:6px;flex:1}
+.screen-badge{font-size:9px;padding:2px 8px;border-radius:7px}
+.sb-orange{background:rgba(232,77,25,0.12);border:1px solid rgba(232,77,25,0.2);color:var(--orange)}
+.sb-green{background:rgba(43,182,115,0.12);border:1px solid rgba(43,182,115,0.2);color:var(--groww)}
+.sb-blue{background:rgba(43,78,255,0.12);border:1px solid rgba(43,78,255,0.2);color:#7B9FFF}
+.screen-body{padding:16px}
+
+/* ── CREATOR SELECTION ── */
+.creator-archetypes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.archetype-card{border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.07)}
+.arch-icon{font-size:28px;margin-bottom:12px}
+.arch-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px}
+.arch-handle{font-size:12px;font-weight:500;margin-bottom:10px}
+.arch-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.arch-tag{font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6)}
+.arch-fit{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6}
+.arch-score{font-size:11px;font-weight:700;margin-top:10px;padding:3px 10px;border-radius:99px;display:inline-block}
+
+/* ── CREATIVE FRAMEWORK ── */
+.hook-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+.hook-card{border-radius:10px;padding:20px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03)}
+.hook-type{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+.hook-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.hook-example{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;font-style:italic}
+.hook-kpi{font-size:11px;font-weight:700;margin-top:10px;padding:2px 8px;border-radius:99px;display:inline-block}
+.ads-organic-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ao-card{border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.07)}
+.ao-card.organic{background:rgba(43,78,255,0.06);border-color:rgba(43,78,255,0.2)}
+.ao-card.paid{background:rgba(232,77,25,0.06);border-color:rgba(232,77,25,0.2)}
+.ao-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.organic .ao-label{color:#7B9FFF}
+.paid .ao-label{color:var(--orange)}
+.ao-items{display:flex;flex-direction:column;gap:8px}
+.ao-item{font-size:13px;color:rgba(255,255,255,0.7);padding-left:14px;position:relative;line-height:1.55}
+.ao-item::before{content:'→';position:absolute;left:0;color:rgba(255,255,255,0.25);font-size:11px;top:1px}
+
+/* ── OUTCOMES ── */
+.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.outcome-card{border-radius:var(--radius);padding:28px;text-align:center}
+.oc-num{font-size:42px;font-weight:800;line-height:1;margin-bottom:6px}
+.oc-label{font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:8px}
+.oc-body{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+.attribution-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.attr-step{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px;text-align:center}
+.attr-step-icon{font-size:20px;margin-bottom:8px}
+.attr-step-title{font-size:12px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:4px}
+.attr-step-body{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
+
+/* ── CTA ── */
+#cta{background:var(--navy);min-height:60vh;display:flex;align-items:center}
+.cta-inner{max-width:680px;margin:0 auto;text-align:center;padding:100px 56px}
+.cta-h{font-size:clamp(36px,4vw,56px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px}
+.cta-h em{font-style:normal;color:var(--orange)}
+.cta-sub{font-size:17px;color:rgba(255,255,255,0.5);line-height:1.85;margin-bottom:44px}
+.cta-steps{display:flex;justify-content:center;gap:32px;margin-bottom:44px}
+.cta-step{text-align:center}
+.cta-step-num{font-size:24px;font-weight:800;color:var(--orange);margin-bottom:4px}
+.cta-step-lbl{font-size:13px;color:rgba(255,255,255,0.5)}
+
+/* ── MISC ── */
+.divider{height:1px;background:rgba(255,255,255,0.06);margin:0 56px}
+.tag{font-size:11px;padding:3px 10px;border-radius:99px}
+.scroll-fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.scroll-fade.vis{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav{padding:0 24px}
+  .hero-inner,.sec{padding-left:24px;padding-right:24px}
+  .prob-grid,.dna-cards,.analysis-grid,.os-layout,.creator-archetypes,.hook-grid,.ads-organic-grid,.outcomes-grid,.platform-layout{grid-template-columns:1fr}
+  .funnel-steps{grid-template-columns:1fr}
+  h2{font-size:32px}
+  .hero-h1{font-size:42px}
+  .hero-stats{flex-wrap:wrap;gap:24px}
+  .attribution-row{grid-template-columns:1fr 1fr}
+  .comp-table{font-size:12px}
+  .comp-table th.col-attr{width:140px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Galvor <span>×</span> AngelOne</div>
+  <div class="nav-links">
+    <a href="#problem">The Problem</a>
+    <a href="#funnel">Funnel</a>
+    <a href="#platform">Platform</a>
+    <a href="#objections">FAQ</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Confidential · Galvor × AngelOne</div>
+    <h1 class="hero-h1">Creator marketing that moves<br><em>KYCs, not just metrics.</em></h1>
+    <p class="hero-sub">The gap is a system — for selecting the right creators, predicting which compliant educational content drives installs, and tying every reel to a KYC.</p>
+  </div>
+</div>
+
+<!-- ═══ THE PROBLEM ═══ -->
+<div class="bg-dark">
+<div class="sec" id="problem">
+  <div class="sec-label">The Problem</div>
+  <h2>Three gaps in creator marketing — specific to fintech.</h2>
+  <p class="sec-sub">AngelOne runs creator campaigns. The creatives get views. KYC numbers don't always follow. Here's where the system breaks.</p>
+  <div class="prob-grid scroll-fade">
+
+    <div class="prob-card c2">
+      <div class="prob-num">01 · Attribution Gap</div>
+      <div class="prob-title">You can't tell which creator drove a KYC. Or a first trade.</div>
+      <div class="prob-body">Affiliate links track clicks — that's solved. What isn't solved is connecting organic creator content to business outcomes: which reel drove an app install, which video series lifted KYC completion rates in a cohort, which creator archetype generates accounts that actually trade. The influence exists; the measurement doesn't.</div>
+    </div>
+
+    <div class="prob-card c3">
+      <div class="prob-num">02 · Selection Gap</div>
+      <div class="prob-title">Creator selection is based on follower count, not audience fit.</div>
+      <div class="prob-body">A creator with 500K followers in personal finance looks right on paper. But if 60% of their audience is already invested elsewhere or too young to open an account, the campaign will underperform. AngelOne's ideal KYC candidate — 22–35, salaried, first or second brokerage account — isn't evaluated at the creator selection stage at all.</div>
+    </div>
+
+    <div class="prob-card c4">
+      <div class="prob-num">03 · No Learning Loop</div>
+      <div class="prob-title">Every campaign brief starts from scratch.</div>
+      <div class="prob-body">There is no real-time feedback from what's working. Which hook drove installs? Which creator archetype completed KYC at the highest rate? Which format converted to a first trade within 7 days? Without a system that captures and feeds this back, the next brief is built on instinct — not on what the last campaign actually taught you. Creator performance never compounds.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ═══ SELF ANALYSIS ═══ -->
+<div class="bg-dark">
+<div class="sec" id="self-analysis">
+  <div class="sec-label">AngelOne Content Analysis</div>
+  <h2>We've already analysed AngelOne's content.</h2>
+  <p class="sec-sub">Before pitching a campaign, Galvor maps the brand's existing content DNA and creative clusters — so every recommendation is grounded in what AngelOne has already built, not generic playbooks.</p>
+
+  <div class="dna-cards scroll-fade">
+
+    <div class="dna-card">
+      <div class="dna-card-num">01</div>
+      <div class="dna-card-inner">
+        <div class="dna-card-label">Brand DNA Analysis</div>
+        <h3 class="dna-card-title">How AngelOne shows up — across every content surface.</h3>
+        <p class="dna-card-body">Galvor analysed AngelOne's brand positioning by pulling signals from three sources: website copy and tone, organic social media content, and the active ads library. The output is a structured Brand DNA profile — the language patterns, audience framing, and content angles that define how AngelOne communicates today.</p>
+        <div class="dna-sources">
+          <span class="dna-source">Website</span>
+          <span class="dna-source">Social Media Content</span>
+          <span class="dna-source">Ads Library</span>
+        </div>
+        <a href="https://one.galvor.ai/brand-dna" target="_blank" class="dna-link">View Brand DNA Analysis →</a>
+      </div>
+    </div>
+
+    <div class="dna-card">
+      <div class="dna-card-num">02</div>
+      <div class="dna-card-inner">
+        <div class="dna-card-label">Content Cluster Mapping</div>
+        <h3 class="dna-card-title">Where AngelOne's content sits — and where the industry is going.</h3>
+        <p class="dna-card-body">Content across AngelOne's ecosystem and the broader broking industry has been grouped into clusters — by theme, hook style, audience intent, and format. The cluster map shows which content categories AngelOne is already represented in, which are under-indexed relative to the industry, and where the highest-intent audience is currently being served by competitors.</p>
+        <div class="dna-sources">
+          <span class="dna-source">AngelOne Content</span>
+          <span class="dna-source">Broking Industry</span>
+          <span class="dna-source">Cluster Mapping</span>
+        </div>
+        <a href="https://one.galvor.ai/clusters?source=owned" target="_blank" class="dna-link">View Content Clusters →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ═══ COMPETITIVE ═══ -->
+<div class="bg-dark2">
+<div class="sec" id="competitive">
+  <div class="sec-label orange">Sample Competitor Comparison</div>
+  <h2>AngelOne vs Groww — the content gap.</h2>
+  <p class="sec-sub">Groww didn't just outspend AngelOne on creator marketing. They built a system. Here's where the gap is, dimension by dimension.</p>
+
+  <table class="comp-table scroll-fade">
+    <thead>
+      <tr>
+        <th class="col-attr">Dimension</th>
+        <th class="col-ao">AngelOne</th>
+        <th class="col-gr">Groww</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="attr">Narrative ownership</td>
+        <td class="ao-cell">Feature demos, app walkthroughs<br><span class="badge-ok">Opportunity to define</span></td>
+        <td class="gr-cell">"Investing made simple" — owned<br><span class="badge-win">Category leader</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Creator archetype</td>
+        <td class="ao-cell">Mixed — room to consolidate<br><span class="badge-ok">Headroom to own</span></td>
+        <td class="gr-cell">Personal finance educator + aspirational lifestyle<br><span class="badge-win">Consistent</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Primary hook style</td>
+        <td class="ao-cell">"No income proof" + cash loan offers<br><span class="badge-lag">Off-brand for traders</span></td>
+        <td class="gr-cell">"Invest in MF / Stock Market" — category-owned<br><span class="badge-win">Consistent signal</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Platform mix</td>
+        <td class="ao-cell">Instagram-first, short-form<br><span class="badge-ok">Partial</span></td>
+        <td class="gr-cell">YouTube (education) + Instagram (lifestyle)<br><span class="badge-win">Full funnel</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Content-product fit</td>
+        <td class="ao-cell">Product is advanced; content can match it<br><span class="badge-ok">Strong upside</span></td>
+        <td class="gr-cell">Product is simple; content is simple<br><span class="badge-win">High alignment</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Creator attribution to KYC</td>
+        <td class="ao-cell">Affiliates tracked · organic creator influence: next frontier<br><span class="badge-ok">Gap to close</span></td>
+        <td class="gr-cell">Affiliates tracked · organic creator influence: next frontier<br><span class="badge-ok">Same gap</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Paid creative message (May 2026)</td>
+        <td class="ao-cell">Cash loans, franchise, offer-led + investing<br><span class="badge-lag">Fragmented</span></td>
+        <td class="gr-cell">"Invest in MF / Stock Market" — only message<br><span class="badge-win">Focused signal</span></td>
+      </tr>
+      <tr>
+        <td class="attr">Untapped channel</td>
+        <td class="ao-cell" colspan="2" style="text-align:center;color:var(--orange);font-weight:600;font-size:13px">
+          Educational creator content: 0 ads in either library. The channel that drives install intent in fintech is completely unattributed — by both brands. First to own it wins.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Meta Ads Library Data -->
+  <div style="margin-top:36px" class="scroll-fade">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px">Meta Ads Library — May 27, 2026 · Active paid creatives analysed</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+
+      <!-- AngelOne -->
+      <div style="background:rgba(232,77,25,0.05);border:1px solid rgba(232,77,25,0.18);border-radius:var(--radius);padding:24px">
+        <div style="font-size:14px;font-weight:700;color:var(--orange);margin-bottom:4px">AngelOne — ad creative mix</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:18px">Running since Oct 2025 · FB + IG + AN + Messenger + Threads + WhatsApp</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:rgba(255,255,255,0.6)">DCO — no visible creative</span><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.75)">Majority</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:76%;background:rgba(255,255,255,0.18);border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:#FF7070">"No income proof" + Cash Loan (offer-led)</span><span style="font-size:11px;font-weight:600;color:#FF7070">Significant</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:10%;background:#FF7070;border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:rgba(255,255,255,0.45)">Franchise / AP recruitment (B2B)</span><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.45)">Present</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:5%;background:rgba(255,255,255,0.2);border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:rgba(255,255,255,0.45)">"Chat with us" + Login retargeting (retention)</span><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.45)">Present</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:3%;background:rgba(255,255,255,0.15);border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:var(--orange)">"Trade Seamlessly Across Platforms" (feature)</span><span style="font-size:11px;font-weight:700;color:var(--orange)">Minimal</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:1%;background:var(--orange);border-radius:2px"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;background:rgba(255,80,80,0.07);border:1px solid rgba(255,80,80,0.18);border-radius:6px;padding:9px 12px;font-size:11.5px;color:#FF7070;font-weight:500">Educational / creator content visible in library: none</div>
+      </div>
+
+      <!-- Groww -->
+      <div style="background:rgba(43,182,115,0.04);border:1px solid rgba(43,182,115,0.18);border-radius:var(--radius);padding:24px">
+        <div style="font-size:14px;font-weight:700;color:var(--groww);margin-bottom:4px">Groww — ad creative mix</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:18px">Running since Nov 2025 · FB + IG + AN + Threads + Messenger</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:rgba(255,255,255,0.6)">DCO — product-led</span><span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.75)">Majority</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:91%;background:rgba(255,255,255,0.18);border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:var(--groww)">"Invest in Direct Mutual Funds" (IMAGE + VIDEO)</span><span style="font-size:11px;font-weight:600;color:var(--groww)">Present</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:5%;background:var(--groww);border-radius:2px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:var(--groww)">"Invest in Stock Market" (VIDEO)</span><span style="font-size:11px;font-weight:600;color:var(--groww)">Present</span></div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:5%;background:var(--groww);border-radius:2px"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;background:rgba(43,182,115,0.07);border:1px solid rgba(43,182,115,0.18);border-radius:6px;padding:9px 12px;font-size:11.5px;color:var(--groww);font-weight:500">All named creatives own one message: invest in the market</div>
+        <div style="margin-top:6px;background:rgba(43,182,115,0.04);border:1px solid rgba(43,182,115,0.1);border-radius:6px;padding:9px 12px;font-size:11px;color:rgba(43,182,115,0.7)">Zero off-category products · Zero B2B / franchise ads</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:16px 20px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.75">
+      <span style="color:#F59E0B;font-weight:600">What the data shows:</span> AngelOne's paid creative mix spans multiple products and audiences — investing, loans, franchise — reflecting the scale and breadth of the business. Groww runs a tighter message set. What neither library shows is educational creator content — the channel that builds install intent sits outside the tracked paid stack for both brands. That's the gap Galvor connects.
+    </div>
+  </div>
+
+  <!-- Opportunity callout -->
+  <div style="margin-top:20px;background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.2);border-radius:var(--radius);padding:28px 32px;display:flex;gap:24px;align-items:flex-start" class="scroll-fade">
+    <div style="font-size:24px;flex-shrink:0;line-height:1">→</div>
+    <div>
+      <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px">The whitespace Groww can't take from you</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75">Groww's narrative is permanently anchored to beginners and passive investing. They cannot credibly own F&O, SmartAPI integrations, active trading, or the "I trade for a living" identity — because their product isn't built for that audience. AngelOne is. The creator marketing playbook that wins this segment doesn't exist yet — and no one is building it faster than Galvor can.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ WHAT GALVOR DOES ═══ -->
+<div class="bg-dark2">
+<div class="sec" id="os">
+  <div class="sec-label">What Galvor Does</div>
+  <h2>The creator marketing system<br>for performance-driven brokers.</h2>
+  <p class="sec-sub">Galvor is not an agency. It's the intelligence layer that connects every creator decision — selection, creative, distribution — to KYCs, traffic, and trade volumes.</p>
+
+  <div class="os-layout scroll-fade" style="display:block">
+    <div class="funnel-card" style="max-width:100%">
+      <div class="funnel-title">How Galvor connects content → KYC → trade volume</div>
+      <div class="funnel-steps">
+        <div class="funnel-step">
+          <div class="fs-num" style="background:rgba(232,77,25,0.15);color:var(--orange)">1</div>
+          <div>
+            <div class="fs-label">Creator selection with KYC-fit scoring</div>
+            <div class="fs-body">Every creator scored on audience overlap with AngelOne's KYC-ready segment (22–35, salaried, investment-aware). Brand DNA alignment against your positioning.</div>
+            <span class="fs-metric" style="background:rgba(232,77,25,0.1);color:var(--orange)">↑ Audience-to-KYC fit</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="fs-num" style="background:rgba(123,159,255,0.15);color:#7B9FFF">2</div>
+          <div>
+            <div class="fs-label">Creative briefed on predicted hook × format</div>
+            <div class="fs-body">Briefs generated from your top-performing cluster data. Hook type, format, length, script angle — all grounded in what has historically driven installs and KYC completion.</div>
+            <span class="fs-metric" style="background:rgba(43,78,255,0.1);color:#7B9FFF">↑ Hook rate, ↑ install rate</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="fs-num" style="background:rgba(16,185,129,0.12);color:#10B981">3</div>
+          <div>
+            <div class="fs-label">Attribution links embedded per creator</div>
+            <div class="fs-body">Each creator gets a unique UTM + KYC tracking pixel. Traffic, installs, KYC completions, and first-trade events are tracked back to each creator and creative.</div>
+            <span class="fs-metric" style="background:rgba(16,185,129,0.1);color:#10B981">↑ Attribution coverage</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="fs-num" style="background:rgba(245,158,11,0.12);color:#F59E0B">4</div>
+          <div>
+            <div class="fs-label">Post-campaign learning feeds the next brief</div>
+            <div class="fs-body">Which creator archetype drove the lowest-cost KYC? Which hook had the highest 7-day first-trade rate? This feeds directly into the next campaign's brief — the system compounds.</div>
+            <span class="fs-metric" style="background:rgba(245,158,11,0.1);color:#F59E0B">↓ Cost per KYC over time</span>
+          </div>
+        </div>
+        <div class="funnel-step" style="border-bottom:none;grid-column:1/-1">
+          <div class="fs-num" style="background:rgba(139,92,246,0.15);color:#A78BFA">5</div>
+          <div>
+            <div class="fs-label">Scale what works — UGC → performance ads</div>
+            <div class="fs-body">Best organic creatives are identified and scaled as Meta/YouTube ads. The same creator content that builds brand trust becomes the performance ad that drives the KYC.</div>
+            <span class="fs-metric" style="background:rgba(139,92,246,0.1);color:#A78BFA">↑ Ad efficiency, ↓ CPL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ FUNNEL CONTRIBUTION ═══ -->
+<div class="bg-dark">
+<div class="sec" id="funnel">
+  <div class="sec-label orange">Full-Funnel Impact</div>
+  <h2>Where Galvor moves the needle — at every stage.</h2>
+  <p class="sec-sub">Creator marketing isn't just a top-of-funnel play. Each stage of your user journey has a distinct gap — and a distinct Galvor lever.</p>
+
+  <!-- Funnel header strip -->
+  <div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:0;align-items:center;margin-bottom:28px" class="scroll-fade">
+    <div style="text-align:center;background:rgba(232,77,25,0.1);border:1px solid rgba(232,77,25,0.25);border-radius:10px;padding:14px 8px">
+      <div style="font-size:18px;margin-bottom:4px">👁</div>
+      <div style="font-size:12px;font-weight:700;color:#fff">Views</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px">Reels · Shorts · YouTube</div>
+    </div>
+    <div style="text-align:center;font-size:18px;color:rgba(255,255,255,0.2)">→</div>
+    <div style="text-align:center;background:rgba(123,159,255,0.08);border:1px solid rgba(123,159,255,0.2);border-radius:10px;padding:14px 8px">
+      <div style="font-size:18px;margin-bottom:4px">🔗</div>
+      <div style="font-size:12px;font-weight:700;color:#fff">Page Visits</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px">App store · Landing page</div>
+    </div>
+    <div style="text-align:center;font-size:18px;color:rgba(255,255,255,0.2)">→</div>
+    <div style="text-align:center;background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:14px 8px">
+      <div style="font-size:18px;margin-bottom:4px">✅</div>
+      <div style="font-size:12px;font-weight:700;color:#fff">KYCs</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px">Account open · Verified</div>
+    </div>
+    <div style="text-align:center;font-size:18px;color:rgba(255,255,255,0.2)">→</div>
+    <div style="text-align:center;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);border-radius:10px;padding:14px 8px">
+      <div style="font-size:18px;margin-bottom:4px">📈</div>
+      <div style="font-size:12px;font-weight:700;color:#fff">Trading (LTV)</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px">First trade · Active volume</div>
+    </div>
+  </div>
+
+  <!-- 4 detail cards -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" class="scroll-fade">
+
+    <!-- Stage 1: Views -->
+    <div style="border-radius:var(--radius);border:1px solid rgba(232,77,25,0.2);background:rgba(232,77,25,0.04);padding:22px 18px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px">Stage 1 — Views</div>
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:6px">The gap</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:16px">A creator's 2M followers look right on paper. But if 60% are "passive finance consumers" who'll never open a brokerage account, the views mean nothing. You're paying for reach from the wrong people.</div>
+      <div style="height:1px;background:rgba(255,255,255,0.06);margin-bottom:14px"></div>
+      <div style="font-size:12px;font-weight:600;color:var(--orange);margin-bottom:6px">Galvor's lever</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.72);line-height:1.65">Audience-fit scoring on every creator before activation — views from trading-ready segments, not just reach numbers. Select for audience composition, not follower count.</div>
+    </div>
+
+    <!-- Stage 2: Page Visits -->
+    <div style="border-radius:var(--radius);border:1px solid rgba(123,159,255,0.2);background:rgba(43,78,255,0.04);padding:22px 18px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7B9FFF;margin-bottom:14px">Stage 2 — Page Visits</div>
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:6px">The gap</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:16px">High watch-time, low click-through. Hooks that entertain don't always create intent to act. You're getting views but not traffic — and you don't know which hook type drives the click.</div>
+      <div style="height:1px;background:rgba(255,255,255,0.06);margin-bottom:14px"></div>
+      <div style="font-size:12px;font-weight:600;color:#7B9FFF;margin-bottom:6px">Galvor's lever</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.72);line-height:1.65">Hook × click-through analysis from your campaign history — brief creators on hooks that drive link clicks, not just video completions. Creator-specific UTM links capture every visit per creator.</div>
+    </div>
+
+    <!-- Stage 3: KYCs -->
+    <div style="border-radius:var(--radius);border:1px solid rgba(16,185,129,0.2);background:rgba(16,185,129,0.04);padding:22px 18px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#10B981;margin-bottom:14px">Stage 3 — KYCs</div>
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:6px">The gap</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:16px">Users arrive at the app but abandon mid-KYC. You don't know which creators sent the highest-completing users vs which ones sent browsers. Install attribution exists — KYC-completion attribution doesn't.</div>
+      <div style="height:1px;background:rgba(255,255,255,0.06);margin-bottom:14px"></div>
+      <div style="font-size:12px;font-weight:600;color:#10B981;margin-bottom:6px">Galvor's lever</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.72);line-height:1.65">KYC funnel pixel per creator — know exactly which creator drove a completed account, not just an install. Creator-specific landing pages reduce abandonment by pre-filling journey context.</div>
+    </div>
+
+    <!-- Stage 4: Trading LTV -->
+    <div style="border-radius:var(--radius);border:1px solid rgba(139,92,246,0.2);background:rgba(139,92,246,0.04);padding:22px 18px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A78BFA;margin-bottom:14px">Stage 4 — Trading (LTV)</div>
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:6px">The gap</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:16px">KYC ≠ active trader. Funded accounts that never place a trade = zero revenue. You don't know whether Creator A drove accounts that trade daily or accounts that go dormant in week one.</div>
+      <div style="height:1px;background:rgba(255,255,255,0.06);margin-bottom:14px"></div>
+      <div style="font-size:12px;font-weight:600;color:#A78BFA;margin-bottom:6px">Galvor's lever</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.72);line-height:1.65">7-day and 30-day first-trade events attributed per creator archetype. High-LTV audience profiles feed the next creator selection — the system compounds every campaign.</div>
+    </div>
+
+  </div>
+
+  <!-- Compounding callout -->
+  <div style="margin-top:24px;background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.2);border-radius:var(--radius);padding:24px 32px;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr;gap:24px;align-items:center" class="scroll-fade">
+    <div style="text-align:center">
+      <div style="font-size:13px;font-weight:700;color:var(--orange);margin-bottom:4px">Right audience</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5">Creator scoring filters for trading-intent viewers before spend</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.07);height:40px"></div>
+    <div style="text-align:center">
+      <div style="font-size:13px;font-weight:700;color:#7B9FFF;margin-bottom:4px">Right hook</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5">Brief optimised on what drives clicks, not just watch-time</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.07);height:40px"></div>
+    <div style="text-align:center">
+      <div style="font-size:13px;font-weight:700;color:#10B981;margin-bottom:4px">KYC attributed</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5">Every completed account tied to the creator who drove it</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.07);height:40px"></div>
+    <div style="text-align:center">
+      <div style="font-size:13px;font-weight:700;color:#A78BFA;margin-bottom:4px">LTV compounds</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5">High-trade cohorts inform the next selection — cost per active trader falls each cycle</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ PLATFORM ═══ -->
+<div class="bg-dark">
+<div class="sec" id="platform">
+  <div class="sec-label">The Platform</div>
+  <h2>Your intelligence dashboard — built on AngelOne data.</h2>
+  <p class="sec-sub">Live access to six modules after onboarding. Every screen powered by your campaign data, not industry averages.</p>
+
+  <div class="platform-layout">
+    <div class="platform-features">
+      <div class="pf-item sel" data-feature="1">
+        <div class="pf-icon">⬡</div>
+        <div>
+          <div class="pf-title">Creative Clusters</div>
+          <div class="pf-body">Your creatives grouped by performance — P&L Reveal, Feature Demo, Lifestyle, Tutorial. See which cluster drives KYCs and which has room to grow.</div>
+        </div>
+      </div>
+      <div class="pf-item" data-feature="2">
+        <div class="pf-icon">◈</div>
+        <div>
+          <div class="pf-title">Creator KYC-Fit Score</div>
+          <div class="pf-body">Every creator scored on audience-to-KYC-segment match, AngelOne brand alignment, and predicted conversion rate — before activation.</div>
+        </div>
+      </div>
+      <div class="pf-item" data-feature="3">
+        <div class="pf-icon">◎</div>
+        <div>
+          <div class="pf-title">KYC & Install Prediction</div>
+          <div class="pf-body">Hook × format × creator tier matrix ranked by predicted KYC rate and install rate — from your actual campaign history.</div>
+        </div>
+      </div>
+      <div class="pf-item" data-feature="4">
+        <div class="pf-icon">⊞</div>
+        <div>
+          <div class="pf-title">Attribute Linkage</div>
+          <div class="pf-body">Which creative attributes — hook type, setting, script angle — correlate with KYC completions and first-trade events. Evidence over intuition.</div>
+        </div>
+      </div>
+      <div class="pf-item" data-feature="5">
+        <div class="pf-icon">⊕</div>
+        <div>
+          <div class="pf-title">Creative Recommendations</div>
+          <div class="pf-body">AI-generated brief for the next campaign — grounded in your top clusters, KYC data, and trade volume attribution.</div>
+        </div>
+      </div>
+      <div class="pf-item" data-feature="6">
+        <div class="pf-icon">◉</div>
+        <div>
+          <div class="pf-title">Brand DNA</div>
+          <div class="pf-body">The creative fingerprint of AngelOne's best-performing content — the intelligence behind every brief and creator selection decision.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-screens">
+
+      <!-- Screen 1: Creative Clusters -->
+      <div class="pf-screen-wrap pf-visible" data-screen="1">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">Creative Clusters — AngelOne</span>
+            <span class="screen-badge sb-orange">4 identified</span>
+          </div>
+          <div class="screen-body">
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="background:rgba(232,77,25,0.08);border:1px solid rgba(232,77,25,0.25);border-radius:7px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.85)">P&L Reveal × Tutorial</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.45);margin-top:2px">12% of spend · 8 creators</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;width:100px;margin-top:5px;overflow:hidden"><div style="height:100%;width:72%;background:var(--orange);border-radius:2px"></div></div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:16px;font-weight:700;color:var(--orange)">TOP</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.45)">KYC rate 3.2%</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.85)">Feature Demo × Bold Claim</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.45);margin-top:2px">18% of spend · 14 creators</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;width:100px;margin-top:5px;overflow:hidden"><div style="height:100%;width:55%;background:#7B9FFF;border-radius:2px"></div></div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:16px;font-weight:700;color:#7B9FFF">2.1×</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.45)">avg install rate</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,80,80,0.05);border:1px solid rgba(255,80,80,0.12);border-radius:7px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.75)">Offer-led × Generic Lifestyle</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">44% of spend · 31 creators</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;width:100px;margin-top:5px;overflow:hidden"><div style="height:100%;width:28%;background:#FF7070;border-radius:2px"></div></div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:16px;font-weight:700;color:#FF7070">STRANDED</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.4)">KYC rate 0.4%</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,80,80,0.03);border:1px solid rgba(255,80,80,0.08);border-radius:7px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between">
+                <div>
+                  <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.65)">App Walkthrough × Talking Head</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px">26% of spend · 22 creators</div>
+                  <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;width:100px;margin-top:5px;overflow:hidden"><div style="height:100%;width:18%;background:rgba(255,80,80,0.5);border-radius:2px"></div></div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:16px;font-weight:700;color:rgba(255,80,80,0.7)">LOW</div>
+                  <div style="font-size:8px;color:rgba(255,255,255,0.35)">KYC rate 0.2%</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:10px;background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.18);border-radius:6px;padding:8px 10px;font-size:9px;color:rgba(245,158,11,0.9)">→ P&L Reveal cluster is underweight relative to its KYC rate. Shifting budget toward it could 2× KYC output.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 2: Creator KYC-Fit -->
+      <div class="pf-screen-wrap" data-screen="2">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">Creator KYC-Fit Score</span>
+            <span class="screen-badge sb-orange">Top matches</span>
+          </div>
+          <div class="screen-body">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.22);border-radius:7px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px">
+                <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#E84D19,#FF8C5A);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">PK</div>
+                <div style="flex:1">
+                  <div style="font-size:11px;font-weight:600;color:#fff">@pranjal.kamra</div>
+                  <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:6px">Personal Finance · 3.2M followers · YouTube + Instagram</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+                    <div style="background:rgba(255,255,255,0.04);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.5)">KYC-Fit</div><div style="font-size:12px;font-weight:700;color:var(--orange)">88</div></div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.5)">Brand Fit</div><div style="font-size:12px;font-weight:700;color:#7B9FFF">82</div></div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;opacity:0.85">
+                <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#7B9FFF,#4B6EFF);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">AT</div>
+                <div style="flex:1">
+                  <div style="font-size:11px;font-weight:600;color:#fff">@akshat.shrivastava</div>
+                  <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:6px">Wealth & Investing · 2.1M followers · YouTube</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+                    <div style="background:rgba(255,255,255,0.04);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.5)">KYC-Fit</div><div style="font-size:12px;font-weight:700;color:var(--orange)">81</div></div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.5)">Brand Fit</div><div style="font-size:12px;font-weight:700;color:#7B9FFF">76</div></div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:7px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;opacity:0.6">
+                <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#555,#333);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">VT</div>
+                <div style="flex:1">
+                  <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.7)">@vivek.bajaj (ft money)</div>
+                  <div style="font-size:9px;color:rgba(255,255,255,0.35);margin-bottom:6px">Stock Market Trading · 890K followers</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+                    <div style="background:rgba(255,255,255,0.03);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.35)">KYC-Fit</div><div style="font-size:12px;font-weight:700;color:rgba(232,77,25,0.6)">74</div></div>
+                    <div style="background:rgba(255,255,255,0.03);border-radius:5px;padding:5px 7px"><div style="font-size:8px;color:rgba(255,255,255,0.35)">Brand Fit</div><div style="font-size:12px;font-weight:700;color:rgba(123,159,255,0.6)">71</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 3: KYC Prediction Matrix -->
+      <div class="pf-screen-wrap" data-screen="3">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">KYC & Install Prediction</span>
+          </div>
+          <div class="screen-body">
+            <div style="font-size:9px;color:rgba(255,255,255,0.6);margin-bottom:8px">Hook × Format — predicted KYC rate · based on your campaign history</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr>
+                <td style="padding:7px 10px;font-size:9px;color:rgba(255,255,255,0.45);width:100px"></td>
+                <td style="padding:7px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.7);text-align:center">Tutorial</td>
+                <td style="padding:7px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.7);text-align:center">Product Demo</td>
+                <td style="padding:7px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.7);text-align:center">Talking Head</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.02)">P&L Reveal</td>
+                <td style="padding:8px 10px;text-align:center;background:rgba(232,77,25,0.18);border:1px solid rgba(232,77,25,0.15)"><div style="font-size:15px;font-weight:700;color:var(--orange);line-height:1">3.2%</div><div style="font-size:7px;color:rgba(255,255,255,0.5);margin-top:2px">9 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center;background:rgba(43,78,255,0.1)"><div style="font-size:14px;font-weight:600;color:#7B9FFF;line-height:1">2.4%</div><div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:2px">7 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center"><div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.55);line-height:1">1.8%</div><div style="font-size:7px;color:rgba(255,255,255,0.35);margin-top:2px">6 Reels</div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.02)">Bold Claim</td>
+                <td style="padding:8px 10px;text-align:center;background:rgba(232,77,25,0.12)"><div style="font-size:14px;font-weight:700;color:var(--orange);line-height:1">2.7%</div><div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:2px">11 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center;background:rgba(43,78,255,0.08)"><div style="font-size:14px;font-weight:600;color:#7B9FFF;line-height:1">2.1%</div><div style="font-size:7px;color:rgba(255,255,255,0.45);margin-top:2px">8 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center"><div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.55);line-height:1">1.5%</div><div style="font-size:7px;color:rgba(255,255,255,0.35);margin-top:2px">7 Reels</div></td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.02)">Offer First</td>
+                <td style="padding:8px 10px;text-align:center"><div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.4);line-height:1">0.8%</div><div style="font-size:7px;color:rgba(255,255,255,0.25);margin-top:2px">6 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center"><div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.4);line-height:1">0.6%</div><div style="font-size:7px;color:rgba(255,255,255,0.25);margin-top:2px">8 Reels</div></td>
+                <td style="padding:8px 10px;text-align:center"><div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);line-height:1">0.4%</div><div style="font-size:7px;color:rgba(255,255,255,0.2);margin-top:2px">6 Reels</div></td>
+              </tr>
+            </table>
+            <div style="margin-top:8px;display:flex;align-items:center;gap:6px"><div style="width:8px;height:8px;background:rgba(232,77,25,0.2);border:1px solid rgba(232,77,25,0.4);border-radius:2px"></div><span style="color:rgba(255,255,255,0.55);font-size:8.5px">AngelOne campaign data only — no industry benchmarks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 4: Attribute Linkage -->
+      <div class="pf-screen-wrap" data-screen="4">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">Attribute → KYC Linkage</span>
+          </div>
+          <div class="screen-body">
+            <div style="font-size:9px;color:rgba(255,255,255,0.6);margin-bottom:10px">Attribute impact on KYC completion rate (your brand)</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">P&L Reveal hook</span><span style="font-size:13px;font-weight:700;color:#10B981">+1.8×</span></div>
+              <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.12);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">Tutorial format (8–15 min YouTube)</span><span style="font-size:13px;font-weight:700;color:#10B981">+1.4×</span></div>
+              <div style="background:rgba(43,78,255,0.08);border:1px solid rgba(43,78,255,0.15);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">Credibility signal (SEBI registered)</span><span style="font-size:13px;font-weight:700;color:#7B9FFF">+0.9×</span></div>
+              <div style="background:rgba(43,78,255,0.05);border:1px solid rgba(43,78,255,0.1);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">F&O / advanced feature mention</span><span style="font-size:13px;font-weight:700;color:#7B9FFF">+0.7×</span></div>
+              <div style="background:rgba(255,80,80,0.06);border:1px solid rgba(255,80,80,0.12);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">Generic offer / discount hook</span><span style="font-size:13px;font-weight:700;color:#FF7070">−0.6×</span></div>
+              <div style="background:rgba(255,80,80,0.04);border:1px solid rgba(255,80,80,0.08);border-radius:6px;padding:9px 11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:10.5px;color:rgba(255,255,255,0.85)">Generic lifestyle B-roll</span><span style="font-size:13px;font-weight:700;color:#FF7070">−0.8×</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 5: Recommendations -->
+      <div class="pf-screen-wrap" data-screen="5">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">Creative Recommendations</span>
+            <span class="screen-badge sb-orange">Next campaign</span>
+          </div>
+          <div class="screen-body" style="padding:12px">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="background:rgba(232,77,25,0.08);border:1px solid rgba(232,77,25,0.2);border-radius:7px;padding:11px 12px">
+                <div style="font-size:8.5px;font-weight:700;color:var(--orange);margin-bottom:4px">RECOMMENDED — Predicted KYC rate: 2.8–3.4%</div>
+                <div style="font-size:10.5px;color:rgba(255,255,255,0.82);line-height:1.6">P&L Reveal hook × Tutorial format · Finance educator archetype · 22–35 salaried · "I made ₹X trading" reveal at 0–3 sec</div>
+              </div>
+              <div style="background:rgba(43,78,255,0.08);border:1px solid rgba(43,78,255,0.2);border-radius:7px;padding:11px 12px">
+                <div style="font-size:8.5px;font-weight:700;color:#7B9FFF;margin-bottom:4px">WHITESPACE — F&O education: zero competitor presence</div>
+                <div style="font-size:10.5px;color:rgba(255,255,255,0.82);line-height:1.6">Bold Claim × Tutorial · F&O trader archetype · "Why most people lose in F&O" hook — uncontested on all major platforms</div>
+              </div>
+              <div style="background:rgba(255,80,80,0.05);border:1px solid rgba(255,80,80,0.15);border-radius:7px;padding:11px 12px">
+                <div style="font-size:8.5px;font-weight:700;color:#FF7070;margin-bottom:4px">AVOID — predicted KYC rate: 0.4%</div>
+                <div style="font-size:10.5px;color:rgba(255,255,255,0.65);line-height:1.6">Offer First × Generic Lifestyle B-roll — currently 44% of spend. Every rupee here is leaving the P&L Reveal cluster underfunded.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 6: Brand DNA -->
+      <div class="pf-screen-wrap" data-screen="6">
+        <div class="screen">
+          <div class="screen-bar">
+            <div class="sd" style="background:#FF5F56"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#27C93F"></div>
+            <span class="screen-title">Brand DNA — AngelOne</span>
+            <span class="screen-badge sb-blue">v1 · Active</span>
+          </div>
+          <div class="screen-body" style="padding:12px">
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:10px 12px;margin-bottom:9px">
+              <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px">POSITIONING</div>
+              <div style="font-size:8.5px;color:rgba(255,255,255,0.85);line-height:1.55;font-style:italic">"The serious investor's and trader's platform — built for those who treat the market as a wealth-building tool, not a savings account."</div>
+              <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:7px 0 3px">TARGET</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.65)">22–38 salaried, investment-aware, actively seeking superior execution and analytics over simplified UX.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:10px">
+                <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">TONE</div>
+                <div style="display:flex;flex-wrap:wrap;gap:3px">
+                  <span style="font-size:6.5px;padding:2px 5px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">credible</span>
+                  <span style="font-size:6.5px;padding:2px 5px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">ambitious</span>
+                  <span style="font-size:6.5px;padding:2px 5px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">data-led</span>
+                  <span style="font-size:6.5px;padding:2px 5px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">empowering</span>
+                </div>
+                <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:8px 0 5px">USE THESE</div>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <div style="display:flex;align-items:center;gap:5px;font-size:7.5px;color:rgba(255,255,255,0.8);background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.18);border-radius:4px;padding:3px 6px"><span style="color:var(--orange)">✓</span> Trade with an edge</div>
+                  <div style="display:flex;align-items:center;gap:5px;font-size:7.5px;color:rgba(255,255,255,0.8);background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.18);border-radius:4px;padding:3px 6px"><span style="color:var(--orange)">✓</span> Built for serious investors</div>
+                  <div style="display:flex;align-items:center;gap:5px;font-size:7.5px;color:rgba(255,255,255,0.8);background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.18);border-radius:4px;padding:3px 6px"><span style="color:var(--orange)">✓</span> Your portfolio, your data</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:10px">
+                <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:5px">KEY THEMES</div>
+                <div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px">
+                  <span style="font-size:6.5px;padding:2px 6px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">Active Trading</span>
+                  <span style="font-size:6.5px;padding:2px 6px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">Wealth Building</span>
+                  <span style="font-size:6.5px;padding:2px 6px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">Data & Analytics</span>
+                  <span style="font-size:6.5px;padding:2px 6px;border-radius:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.72)">F&O Mastery</span>
+                </div>
+                <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:5px">AVOID</div>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <div style="font-size:7.5px;color:rgba(255,80,80,0.8);padding:3px 6px;background:rgba(255,80,80,0.06);border:1px solid rgba(255,80,80,0.12);border-radius:4px">✗ "Start with ₹100" (Groww's turf)</div>
+                  <div style="font-size:7.5px;color:rgba(255,80,80,0.8);padding:3px 6px;background:rgba(255,80,80,0.06);border:1px solid rgba(255,80,80,0.12);border-radius:4px">✗ Generic lifestyle / travel reels</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ CREATOR SELECTION ═══ -->
+<div class="bg-dark2">
+<div class="sec" id="creators">
+  <div class="sec-label">Creator Selection</div>
+  <h2>Four archetypes that move KYCs for AngelOne.</h2>
+  <p class="sec-sub">Creator selection isn't about follower count. It's about audience composition, content-product alignment, and KYC-segment overlap.</p>
+
+  <div class="creator-archetypes scroll-fade">
+    <div class="archetype-card" style="background:rgba(232,77,25,0.06);border-color:rgba(232,77,25,0.2)">
+      <div class="arch-icon">📈</div>
+      <div class="arch-title">The Active Trader</div>
+      <div class="arch-handle" style="color:var(--orange)">P&L transparency · F&O · Multi-asset</div>
+      <div class="arch-tags">
+        <span class="arch-tag">22–38 yrs</span><span class="arch-tag">Salaried + Self-employed</span><span class="arch-tag">YouTube primary</span><span class="arch-tag">High conviction</span>
+      </div>
+      <div class="arch-fit">Shares real P&L. Audience is already trading or actively considering it. Highest KYC-intent audience of any creator archetype in fintech. Conversion narrative: "Switch to a platform with real tools."</div>
+      <span class="arch-score" style="background:rgba(232,77,25,0.12);color:var(--orange);border:1px solid rgba(232,77,25,0.25)">KYC-Fit: 88–94</span>
+    </div>
+
+    <div class="archetype-card" style="background:rgba(43,78,255,0.06);border-color:rgba(43,78,255,0.2)">
+      <div class="arch-icon">🎓</div>
+      <div class="arch-title">The Personal Finance Educator</div>
+      <div class="arch-handle" style="color:#7B9FFF">SIP · MF · FIRE · Portfolio building</div>
+      <div class="arch-tags">
+        <span class="arch-tag">25–40 yrs</span><span class="arch-tag">Salaried professionals</span><span class="arch-tag">YouTube + Instagram</span>
+      </div>
+      <div class="arch-fit">Audience trusts their financial judgment. Mid-funnel intent — ready to open a second or third account. Conversion narrative: "AngelOne for your active portfolio, mutual funds handled."</div>
+      <span class="arch-score" style="background:rgba(43,78,255,0.1);color:#7B9FFF;border:1px solid rgba(43,78,255,0.2)">KYC-Fit: 78–86</span>
+    </div>
+
+    <div class="archetype-card" style="background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.18)">
+      <div class="arch-icon">💹</div>
+      <div class="arch-title">The Market Analyst</div>
+      <div class="arch-handle" style="color:#10B981">Technical analysis · Screeners · SmartAPI</div>
+      <div class="arch-tags">
+        <span class="arch-tag">26–42 yrs</span><span class="arch-tag">Technical traders</span><span class="arch-tag">Twitter/X + YouTube</span><span class="arch-tag">High expertise</span>
+      </div>
+      <div class="arch-fit">Niche but extremely high-intent audience. SmartAPI and advanced tools are the natural fit. Opens a distinct conversation Groww cannot have. Conversion narrative: "Built for how you actually trade."</div>
+      <span class="arch-score" style="background:rgba(16,185,129,0.08);color:#10B981;border:1px solid rgba(16,185,129,0.2)">KYC-Fit: 82–90</span>
+    </div>
+
+    <div class="archetype-card" style="background:rgba(139,92,246,0.05);border-color:rgba(139,92,246,0.18)">
+      <div class="arch-icon">✨</div>
+      <div class="arch-title">The Aspirational Wealth Builder</div>
+      <div class="arch-handle" style="color:#A78BFA">FIRE · Side income · First portfolio</div>
+      <div class="arch-tags">
+        <span class="arch-tag">22–30 yrs</span><span class="arch-tag">Early career</span><span class="arch-tag">Instagram + YouTube Shorts</span>
+      </div>
+      <div class="arch-fit">Top-of-funnel brand building. Audience is earlier in their investing journey but highly aspirational. Builds the "AngelOne = serious platform" association before the Groww → AngelOne switch moment.</div>
+      <span class="arch-score" style="background:rgba(139,92,246,0.1);color:#A78BFA;border:1px solid rgba(139,92,246,0.2)">KYC-Fit: 65–74</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ OUTCOMES ═══ -->
+<div class="bg-dark2">
+<div class="sec" id="outcomes">
+  <div class="sec-label orange">What Changes</div>
+  <h2>Creator spend connected to KYCs, traffic, and trade volume.</h2>
+  <p class="sec-sub">The metrics that Galvor moves for AngelOne — not views and reach, but the numbers that show up in your quarterly review.</p>
+
+  <div class="outcomes-grid scroll-fade">
+    <div class="outcome-card" style="background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.2)">
+      <div class="oc-num" style="color:var(--orange)">↓60%</div>
+      <div class="oc-label">Cost per KYC from creator spend</div>
+      <div class="oc-body">By weighting budget toward the highest-KYC clusters and briefing on predicted hooks — compounding each campaign cycle.</div>
+    </div>
+    <div class="outcome-card" style="background:rgba(43,78,255,0.07);border:1px solid rgba(43,78,255,0.2)">
+      <div class="oc-num" style="color:#7B9FFF">100%</div>
+      <div class="oc-label">Creator spend attributed to a business metric</div>
+      <div class="oc-body">KYC completions, app installs, first-trade events — every organic creator linked to an outcome alongside your existing affiliate stack.</div>
+    </div>
+    <div class="outcome-card" style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.18)">
+      <div class="oc-num" style="color:#10B981">3×</div>
+      <div class="oc-label">KYC output at the same creator budget</div>
+      <div class="oc-body">Based on shifting weight toward top-performing archetypes and adding the creator layer that compounds alongside paid and affiliate.</div>
+    </div>
+  </div>
+
+  <div class="attribution-row scroll-fade">
+    <div class="attr-step">
+      <div class="attr-step-icon">🎥</div>
+      <div class="attr-step-title">Creator publishes reel</div>
+      <div class="attr-step-body">With unique UTM link + Galvor tracking pixel embedded in bio/caption</div>
+    </div>
+    <div class="attr-step">
+      <div class="attr-step-icon">📲</div>
+      <div class="attr-step-title">User clicks → App install</div>
+      <div class="attr-step-body">Creator-specific install tracked. Traffic source, device, and audience segment captured</div>
+    </div>
+    <div class="attr-step">
+      <div class="attr-step-icon">✅</div>
+      <div class="attr-step-title">KYC completion event</div>
+      <div class="attr-step-body">KYC funnel pixel fires. Creator and creative credited for the activated account</div>
+    </div>
+    <div class="attr-step">
+      <div class="attr-step-icon">📊</div>
+      <div class="attr-step-title">First trade → trade volume</div>
+      <div class="attr-step-body">7-day and 30-day first-trade events attributed back to creator archetype. Trade volume cohort analysis per campaign</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ OBJECTIONS ═══ -->
+<div class="bg-dark">
+<div class="sec" id="objections">
+  <div class="sec-label">Questions You'll Ask</div>
+  <h2>Four objections — and the honest answers.</h2>
+  <p class="sec-sub">The questions that come up in every fintech pitch. Answered directly, without filler.</p>
+
+  <div style="display:flex;flex-direction:column;gap:16px" class="scroll-fade">
+
+    <div style="border:1px solid rgba(255,80,80,0.2);border-radius:var(--radius);overflow:hidden">
+      <div style="background:rgba(255,80,80,0.06);padding:18px 24px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:13px;font-weight:700;color:#FF7070;flex-shrink:0;margin-top:1px">Q1</div>
+        <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,0.88)">"SEBI just shut down Zerodha's creator programme. Isn't working with influencers risky for us?"</div>
+      </div>
+      <div style="padding:18px 24px 20px;background:rgba(255,255,255,0.015)">
+        <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8">Zero1 was about creators giving investment advice and stock recommendations — that's what triggered SEBI. Galvor optimises <strong style="color:#fff">brand and educational content performance only</strong> — "How AngelOne's platform works" or "Basics of options trading." We don't touch stock tips, we don't predict performance of investment advice. Groww and Upstox are still running creator marketing within these boundaries. The risk is non-compliance — not creator marketing itself.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius);overflow:hidden">
+      <div style="background:rgba(245,158,11,0.06);padding:18px 24px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:13px;font-weight:700;color:#F59E0B;flex-shrink:0;margin-top:1px">Q2</div>
+        <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,0.88)">"We already track installs via UTM links and promo codes. Why do we need Galvor?"</div>
+      </div>
+      <div style="padding:18px 24px 20px;background:rgba(255,255,255,0.015)">
+        <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8">UTM tracking is measurement <em>after</em> you spend. Galvor predicts <strong style="color:#fff">before you commit budget.</strong> You'll know which creator is likely to drive 5,000 installs vs 500 installs before the campaign goes live — not three months later when the invoice is already paid. The difference is reactive tracking vs predictive optimisation. Both are necessary; only one stops wasted spend.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid rgba(43,78,255,0.2);border-radius:var(--radius);overflow:hidden">
+      <div style="background:rgba(43,78,255,0.06);padding:18px 24px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:13px;font-weight:700;color:#7B9FFF;flex-shrink:0;margin-top:1px">Q3</div>
+        <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,0.88)">"Our creator content is educational, not promotional. Does Galvor even apply here?"</div>
+      </div>
+      <div style="padding:18px 24px 20px;background:rgba(255,255,255,0.015)">
+        <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8">Exactly — educational content <em>is</em> your growth engine. But not all finance educators are equal. Some have audiences of learners (low conversion — they watch, stay curious, don't open accounts). Some have audiences ready to trade (high conversion — they act on what they learn). <strong style="color:#fff">Galvor predicts which educators convert to installs so you don't waste budget on the wrong archetype.</strong> The content being compliant doesn't make every creator equally effective.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid rgba(43,182,115,0.2);border-radius:var(--radius);overflow:hidden">
+      <div style="background:rgba(43,182,115,0.06);padding:18px 24px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:13px;font-weight:700;color:var(--groww);flex-shrink:0;margin-top:1px">Q4</div>
+        <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,0.88)">"You've done fashion and D2C. How do we know this works for fintech?"</div>
+      </div>
+      <div style="padding:18px 24px 20px;background:rgba(255,255,255,0.015)">
+        <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8">The Galvor model tracks 1,000+ attributes per creative: audience demographics, engagement patterns, content format, creator authenticity, audience intent signals. These variables apply across categories — the inputs change, the prediction methodology doesn't. MaisonX: ₹50L/month, 18 months, 60% RoAS improvement. <strong style="color:#fff">Same AI model. We train it on your campaign data, not industry benchmarks.</strong> The fintech equivalent is KYC rate, not RoAS — but the system is identical.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<div id="cta" style="background:var(--navy)">
+  <div class="cta-inner">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(232,77,25,0.1);border:1px solid rgba(232,77,25,0.25);border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--orange);letter-spacing:.04em;text-transform:uppercase;margin-bottom:28px">Next Steps</div>
+    <h2 class="cta-h">Run the pilot.<br>Let the data close it.</h2>
+    <p class="cta-sub">A 3-month pilot — ₹10–15L across 10 educational creators. We predict RoAS for each creator <em>before</em> the campaign goes live. After 3 months, compare predictions vs actual installs. If we're 80%+ accurate, scale to your full creator budget.</p>
+
+    <div style="background:rgba(232,77,25,0.07);border:1px solid rgba(232,77,25,0.18);border-radius:12px;padding:20px 28px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;text-align:left">
+      <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:12px">The Pilot Parameters</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:10px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span> ₹10–15L budget across 10 educational creators</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:10px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span> Galvor predicts RoAS per creator <em>before</em> spend is committed</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:10px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span> 3 months: predictions vs actual installs and KYCs</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);display:flex;gap:10px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span> 80%+ accuracy → scale to full creator budget</div>
+      </div>
+    </div>
+
+    <div class="cta-steps">
+      <div class="cta-step">
+        <div class="cta-step-num">Week 1–2</div>
+        <div class="cta-step-lbl">Data ingestion + cluster analysis</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.08);align-self:stretch;margin:8px 0"></div>
+      <div class="cta-step">
+        <div class="cta-step-num">Week 3</div>
+        <div class="cta-step-lbl">Creator shortlist + pre-spend prediction</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.08);align-self:stretch;margin:8px 0"></div>
+      <div class="cta-step">
+        <div class="cta-step-num">Month 1–3</div>
+        <div class="cta-step-lbl">Campaign live · attribution tracking</div>
+      </div>
+    </div>
+    <a href="mailto:amit@galvor.com" class="btn-primary">Book the pilot conversation →</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);padding:24px 56px;display:flex;justify-content:space-between;align-items:center">
+  <div style="font-size:13px;color:rgba(255,255,255,0.3)">© 2025 Galvor. Confidential — prepared exclusively for AngelOne.</div>
+  <div style="font-size:13px;color:rgba(255,255,255,0.3)">galvor.ai · amit@galvor.com</div>
+</div>
+
+<script>
+// Platform tabs
+const pfItems = document.querySelectorAll('.pf-item[data-feature]');
+const pfScreens = document.querySelectorAll('.pf-screen-wrap');
+pfItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const f = item.dataset.feature;
+    pfItems.forEach(el => el.classList.remove('sel'));
+    pfScreens.forEach(el => el.classList.remove('pf-visible'));
+    item.classList.add('sel');
+    const screen = document.querySelector(`.pf-screen-wrap[data-screen="${f}"]`);
+    if (screen) screen.classList.add('pf-visible');
+  });
+});
+
+// Scroll fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
